@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Income Tax Calculator</title>
+       <script>
+           function incomeTax(){
+               var x = document.getElementById("TaxIncome").value;
+
+               if(x >= 0 && x <= 250000 ){
+               var y = 0;
+               document.getElementById("demo").innerHTML = "Income Tax: " + y;
+               }
+               else if(x > 250000 && x <= 400000){
+               var y = (x - 250000) * 0.20;
+               document.getElementById("demo").innerHTML = "Income Tax: " + y;
+               }
+               else if(x > 400000 && x <= 800000){
+               var y = (x - 400000) * 0.25 + 30000;
+               document.getElementById("demo").innerHTML = "Income Tax: " + y;
+               }
+               else if(x > 800000 && x <= 2000000){
+               var y = (x - 800000) * 0.30 + 130000;
+               document.getElementById("demo").innerHTML = "Income Tax: " + y;
+               }
+               else if(x > 2000000 && x <= 8000000){
+               var y = (x - 2000000) * 0.32 + 490000;
+               document.getElementById("demo").innerHTML = "Income Tax: " + y;
+               }
+               else if(x > 8000000){
+               var y = (x - 8000000) * 0.35 + 2410000;
+               document.getElementById("demo").innerHTML = "Income Tax: " + y;
+               }
+           }
+       </script>
+       <style> 
+     body {
+            text-align: center;
+            background-color: #f0f0f0;
+          }
+          ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;        
+            overflow: hidden;
+            background-color: #3e497a;   
+            
+          }
+          li {
+            float: left;
+            font-family: tahoma;
+            
+          }
+          li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+          }
+          li a:hover{
+            background-color: #21325e;
+          }
+          .active{
+            background-color: #21325e;
+          }
+         .no5{
+           background-color: #3e497a;
+           border-radius: 25px;
+           font-family: tahoma;
+           color: white;
+           margin: auto;
+           width: 30%;
+           padding: 10px;
+           font-family: tahoma;
+         }
+         .no5 a {
+         color: white;
+         text-decoration: none;
+         
+         }
+         .no5:hover{
+         background-color: #21325e;
+         }
+          
+       </style>
+    </header>
+
+    <body>
+       <ul class="navbar">
+           <li> <a href="https://aycees.w3spaces.com/index.html"> Home</a> </li>
+           <li> <a href="https://aycees.w3spaces.com/simplecomputation.html"> Simple Computation</a> </li>
+           <li> <a  class="active" href="https://aycees.w3spaces.com/incometaxcalculator.html"> Income Tax Calculator </a> </li>
+           <li> <a href="https://aycees.w3spaces.com/factorialsumaverage.html"> Factorial, Sum, and Average</a> </li>
+           <li> <a href="https://aycees.w3spaces.com/simplepayroll.html"> Simple Payroll</a> </li>
+       </ul>
+
+        <h1> Income Tax Calculator </h1>
+       <div class="no1">
+        <label> Taxable Income: </label>
+        <input id="TaxIncome" type="number" placeholder="Enter Value">
+        <button id="startFunction" onclick="incomeTax()"> Compute </button> 
+        <p id="demo"> </p>
+       </div> <br>
+       <div class="no5">
+        <a href="https://aycees.w3spaces.com/index.html"> Go back to Home Page </a>
+       </div>
+    </body>
+</html>
