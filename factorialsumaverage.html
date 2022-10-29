@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+    <header>
+        <title> Factorial, Sum, and Average </title>
+        <script>
+            function computation(){
+            var userInput = document.getElementById("userInput").value;
+            
+            //factorial while loop
+            let num = 1;
+            let factorial = 1;
+
+            while(num <= userInput){
+               factorial = factorial * num;
+               num++;
+            }
+            document.getElementById("factorial").innerHTML = "The factorial of number " + userInput + " is: " + factorial;
+
+            //sum do while loop
+            let add = 1;
+            let sum = 0;
+
+            do {
+               sum = sum + add;
+               add++;
+            } 
+            while(add <= userInput);
+            document.getElementById("sum").innerHTML = "The sum of the first " + userInput + " numbers is: " + sum;
+
+            //average for loop
+            var average;
+
+            for (add; add <= userInput; add++){
+               sum = sum + adder;
+            }
+            average = sum / userInput;
+            average = average.toFixed(2);
+            document.getElementById("average").innerHTML = "The average of the first " + userInput + " numbers is " + average;
+
+           }
+       </script>
+       <style> 
+     body {
+            text-align: center;
+            background-color: #f0f0f0;
+          }
+          ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;        
+            overflow: hidden;
+            background-color: #3e497a;   
+            
+          }
+          li {
+            float: left;
+            font-family: tahoma;
+            
+          }
+          li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+          }
+          li a:hover{
+            background-color: #21325e;
+          }
+          .active{
+            background-color: #21325e;
+          }
+          .no5{
+           background-color: #3e497a;
+           border-radius: 25px;
+           font-family: tahoma;
+           color: white;
+           margin: auto;
+           width: 30%;
+           padding: 10px;
+           font-family: tahoma;
+         }
+         .no5 a {
+         color: white;
+         text-decoration: none;
+         
+         }
+         .no5:hover{
+         background-color: #21325e;
+         }
+       </style>
+    </header>
+
+    <body>
+       <ul class="navbar">
+           <li> <a href="https://aycees.w3spaces.com/index.html"> Home</a> </li>
+           <li> <a href="https://aycees.w3spaces.com/simplecomputation.html"> Simple Computation</a> </li>
+           <li> <a href="https://aycees.w3spaces.com/incometaxcalculator.html"> Income Tax Calculator </a> </li>
+           <li> <a class="active" href="https://aycees.w3spaces.com/factorialsumaverage.html"> Factorial, Sum, and Average</a> </li>
+           <li> <a href="https://aycees.w3spaces.com/simplepayroll.html"> Simple Payroll</a> </li>
+       </ul>
+
+    <h1>Factorial, Sum, and Average</h1>
+    
+
+       
+
+    <label>Integer: </label>
+    <input id="userInput" type="number" placeholder='Enter value'>
+    <button id="compute" onclick="computation()"> Compute </button>
+   
+    <p id="factorial"></p>
+    <p id="sum"></p>
+    <p id="average"></p>
+   <div class="no5">
+    <a href="https://aycees.w3spaces.com/index.html"> Go back to Home Page</a>
+    </div>
+    </body>
+
+</html>
