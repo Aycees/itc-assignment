@@ -1,27 +1,60 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Simple Computation</title>
-        <script>
-            function fahrenheittocelsius(valNum) {
-            valNum = parseFloat(valNum);
-             document.getElementById("outputCelsius").innerHTML = (valNum-32) / 1.8;
+
+<header>
+    <title> Simple Payroll </title>
+    <style> 
+        table, th, td, tr {
+         border:1px solid black;
+        }
+    </style>
+    <script>
+        function addToTable(){
+            // add information to table
+            var name = document.getElementById("employeeName").value;
+            var daywork = document.getElementById("daysWork").value;
+            var dailyrate = document.getElementById("dailyRate").value;
+            var deduction = document.getElementById("deductionAmount").value;
+            let grosspay = daywork * dailyrate;
+            let netpay = grosspay - deduction;
+            var table = document.getElementById("tableBody");
+            var totalRowCount = table.rows.length; 
+            
+            // assign information to each cell
+            var row = table.insertRow();
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);
+            cell1.innerHTML = totalRowCount + 1;
+            cell2.innerHTML = name;
+            cell3.innerHTML = daywork;
+            cell4.innerHTML = dailyrate;
+            cell5.innerHTML = grosspay;
+            cell6.innerHTML = deduction;
+            cell7.innerHTML = netpay;
+
+        }  
+        function deleteRow(){
+            var line = document.getElementById("lineNumber").value;
+            var length = document.getElementById("tableBody").rows.length;
+            var line2 = line;
+            //delete row
+            document.getElementById("tableBody").deleteRow(line - 1);
+
+            // update line number
+            while(line2 <= length){
+                var y = document.getElementById("tableBody").rows[line2 - 1].cells;
+                y[0].innerHTML = line2;
+                line2++;
             }
-            function celsiustofahrenheit(val) {
-            val = parseFloat(val);
-             document.getElementById("outputFahrenheit").innerHTML = (val * 9 / 5) + 32;
-            }
-            function meterstofeet(valN) {
-            valN = parseFloat(valN);
-             document.getElementById("outputFeet").innerHTML = valN * 3.28084;
-            }
-            function feettometers(valNu) {
-            valNu = parseFloat(valNu);
-             document.getElementById("outputMeters").innerHTML = valNu * 0.3048;
-            }
-        </script>
-        <style>
-            body {
+        }
+    </script>
+    <style> 
+           body {
              text-align: center;
              background-color: #f0f0f0;
            }
@@ -31,11 +64,11 @@
              padding: 0;        
              overflow: hidden;
              background-color: #3e497a;   
-             border: 1px solid #3e497a;
              
            }
            li {
              float: left;
+             
              font-family: tahoma;
              
            }
@@ -52,43 +85,16 @@
            .active{
              background-color: #21325e;
            }
-           .no1 {
+          .no1{
             background-color: #3e497a;
-             margin: auto;
-             width: 50%;
-             padding: 40px;
-             border-radius: 25px;
-             color: white;
-             font-family: tahoma;
-           }
-           .no2 {
-            background-color: #3e497a;
-             margin: auto;
-             width: 50%;
-             padding: 40px;
-             border-radius: 25px;
-             color: white;
-             font-family: tahoma;
-           }
-           .no3 {
-            background-color: #3e497a;
-             margin: auto;
-             width: 50%;
-             padding: 40px;
-             border-radius: 25px;
-             color: white;
-             font-family: tahoma;
-           }
-           .no4 {
-            background-color: #3e497a;
-             margin: auto;
-             width: 50%;
-             padding: 40px;
-             border-radius: 25px;
-             color: white;
-             font-family: tahoma;
-           }
-           .no5{
+            border-radius: 25px;
+            font-family: tahoma;
+            color: white;
+            margin: auto;
+            width: 50%;
+            padding: 20px;
+          }
+          .no5{
             background-color: #3e497a;
             border-radius: 25px;
             font-family: tahoma;
@@ -107,56 +113,54 @@
           background-color: #21325e;
           }
         </style>
-    </head>
+</header>
 
-    <body>
-        <ul class="navbar">
+<body>
+    <ul class="navbar">
             <li> <a href="index.html"> Home</a> </li>
-            <li> <a class="active" href="simplecomputation.html"> Simple Computation</a> </li>
+            <li> <a href="simplecomputation.html"> Simple Computation</a> </li>
             <li> <a href="incometax.html"> Income Tax Calculator </a> </li>
             <li> <a href="factorialsumaverage.html"> Factorial, Sum, and Average</a> </li>
-            <li> <a href="payroll.html"> Simple Payroll</a> </li>
+            <li> <a class="active" href="payroll.html"> Simple Payroll</a> </li>
         </ul>
 
-        <h1>Simple Computation</h1>
-        <div class="no1"><p> Fahrenheit to Celsius</p>
-            <p>
-               <label>Fahrenheit</label>
-                <input id="inputFahrenheit" type="number" placeholder="Fahrenheit"
-                oninput="fahrenheittocelsius(this.value)"
-                onchange="fahrenheittocelsius(this.value)">
-            </p>
-            <p>Celsius: <span id="outputCelsius"></span></p>
-        </div> <br>
-        <div class="no2"><p> Celsius to Fahrenheit</p>
-            <p>
-               <label>Celsius</label>
-                <input id="inputCelsius" type="number" placeholder="Celsius"
-                oninput="celsiustofahrenheit(this.value)"
-                onchange="celsiustofahrenheit(this.value)">
-            </p>
-            <p>Fahrenheit: <span id="outputFahrenheit"></span></p>
-        </div> <br>
-        <div class="no3"><p> Meters to Feet</p>
-            <p>
-               <label>Meters</label>
-                <input id="inputMeters" type="number" placeholder="Meters"
-                oninput="meterstofeet(this.value)"
-                onchange="meterstofeet(this.value)">
-            </p>
-            <p>Feet: <span id="outputFeet"></span></p>
-        </div> <br>
-        <div class="no4"><p> Feet to Meters</p>
-            <p>
-               <label>Feet</label>
-                <input id="inputFeet" type="number" placeholder="Feet"
-                oninput="feettometers(this.value)"
-                onchange="feettometers(this.value)">
-            </p>
-            <p>Meters: <span id="outputMeters"></span></p>
-        </div> <br> <br>
-        <div class="no5">
-            <a href="index.html"> Go back to Home Page </a>
-            </div>
-    </body>
+    <h1> Simple Payroll </h1>
+    <p id="demo"> </p>
+   <div class="no1">
+    <label> Employee Name: </label>
+    <input id="employeeName" type="text" placeholder="Enter name"><br><br>
+    <label> Days Worked: </label>
+    <input id="daysWork" type="number" placeholder="Enter days"> <br><br>
+    <label> Daily Rate: </label>
+    <input id="dailyRate" type="number" placeholder="Enter rate"> <br><br>
+    <label> Deduction Amount: </label>
+    <input id="deductionAmount" type="number" placeholder="Enter deduction"> <br><br>
+    <button id="add" onclick="addToTable()"> Add Information </button> <br> <br>
+    <label>Delete Line Number: </label>
+    <input id="lineNumber" type="number" placeholder="Enter Line Number">
+    <button id="delete" onclick="deleteRow()"> Delete </button> 
+   </div> <br>
+    <table style="width:100%" id="myTable">
+        <thead id="tableHead">
+            <tr>
+                <th>No.</th>
+                <th> Employee Name </th>
+                <th> Days Worked </th>
+                <th> Daily Rate </th>
+                <th> Gross Pay </th>
+                <th> Deduction Amount </th>
+                <th> Net Pay </th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            
+            
+        </tbody>
+    </table>
+     <br><br>
+     <div class="no5">
+     <a href="index.html"> Go back to Home Page </a>
+     </div>
+</body>
+
 </html>
