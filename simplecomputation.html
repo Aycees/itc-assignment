@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Computation</title>
+        <script>
+            function fahrenheittocelsius(valNum) {
+            valNum = parseFloat(valNum);
+             document.getElementById("outputCelsius").innerHTML = (valNum-32) / 1.8;
+            }
+            function celsiustofahrenheit(val) {
+            val = parseFloat(val);
+             document.getElementById("outputFahrenheit").innerHTML = (val * 9 / 5) + 32;
+            }
+            function meterstofeet(valN) {
+            valN = parseFloat(valN);
+             document.getElementById("outputFeet").innerHTML = valN * 3.28084;
+            }
+            function feettometers(valNu) {
+            valNu = parseFloat(valNu);
+             document.getElementById("outputMeters").innerHTML = valNu * 0.3048;
+            }
+        </script>
+        <style>
+            body {
+             text-align: center;
+             background-color: #f0f0f0;
+           }
+           ul {
+             list-style-type: none;
+             margin: 0;
+             padding: 0;        
+             overflow: hidden;
+             background-color: #3e497a;   
+             border: 1px solid #3e497a;
+             
+           }
+           li {
+             float: left;
+             font-family: tahoma;
+             
+           }
+           li a {
+             display: block;
+             color: white;
+             text-align: center;
+             padding: 14px 16px;
+             text-decoration: none;
+           }
+           li a:hover{
+             background-color: #21325e;
+           }
+           .active{
+             background-color: #21325e;
+           }
+           .no1 {
+            background-color: #3e497a;
+             margin: auto;
+             width: 50%;
+             padding: 40px;
+             border-radius: 25px;
+             color: white;
+             font-family: tahoma;
+           }
+           .no2 {
+            background-color: #3e497a;
+             margin: auto;
+             width: 50%;
+             padding: 40px;
+             border-radius: 25px;
+             color: white;
+             font-family: tahoma;
+           }
+           .no3 {
+            background-color: #3e497a;
+             margin: auto;
+             width: 50%;
+             padding: 40px;
+             border-radius: 25px;
+             color: white;
+             font-family: tahoma;
+           }
+           .no4 {
+            background-color: #3e497a;
+             margin: auto;
+             width: 50%;
+             padding: 40px;
+             border-radius: 25px;
+             color: white;
+             font-family: tahoma;
+           }
+           .no5{
+            background-color: #3e497a;
+            border-radius: 25px;
+            font-family: tahoma;
+            color: white;
+            margin: auto;
+            width: 30%;
+            padding: 10px;
+            font-family: tahoma;
+          }
+          .no5 a {
+          color: white;
+          text-decoration: none;
+          
+          }
+          .no5:hover{
+          background-color: #21325e;
+          }
+        </style>
+    </head>
+
+    <body>
+        <ul class="navbar">
+            <li> <a href="index.html"> Home</a> </li>
+            <li> <a class="active" href="simplecomputation.html"> Simple Computation</a> </li>
+            <li> <a href="incometax.html"> Income Tax Calculator </a> </li>
+            <li> <a href="factorialsumaverage.html"> Factorial, Sum, and Average</a> </li>
+            <li> <a href="payroll.html"> Simple Payroll</a> </li>
+        </ul>
+
+        <h1>Simple Computation</h1>
+        <div class="no1"><p> Fahrenheit to Celsius</p>
+            <p>
+               <label>Fahrenheit</label>
+                <input id="inputFahrenheit" type="number" placeholder="Fahrenheit"
+                oninput="fahrenheittocelsius(this.value)"
+                onchange="fahrenheittocelsius(this.value)">
+            </p>
+            <p>Celsius: <span id="outputCelsius"></span></p>
+        </div> <br>
+        <div class="no2"><p> Celsius to Fahrenheit</p>
+            <p>
+               <label>Celsius</label>
+                <input id="inputCelsius" type="number" placeholder="Celsius"
+                oninput="celsiustofahrenheit(this.value)"
+                onchange="celsiustofahrenheit(this.value)">
+            </p>
+            <p>Fahrenheit: <span id="outputFahrenheit"></span></p>
+        </div> <br>
+        <div class="no3"><p> Meters to Feet</p>
+            <p>
+               <label>Meters</label>
+                <input id="inputMeters" type="number" placeholder="Meters"
+                oninput="meterstofeet(this.value)"
+                onchange="meterstofeet(this.value)">
+            </p>
+            <p>Feet: <span id="outputFeet"></span></p>
+        </div> <br>
+        <div class="no4"><p> Feet to Meters</p>
+            <p>
+               <label>Feet</label>
+                <input id="inputFeet" type="number" placeholder="Feet"
+                oninput="feettometers(this.value)"
+                onchange="feettometers(this.value)">
+            </p>
+            <p>Meters: <span id="outputMeters"></span></p>
+        </div> <br> <br>
+        <div class="no5">
+            <a href="index.html"> Go back to Home Page </a>
+            </div>
+    </body>
+</html>
